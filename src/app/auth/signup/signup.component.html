@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2>Créer un compte</h2>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+                <input type="email" id="email" class="form-control" formControlName="email">
+                <label for="email">Adresse mail *</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" id="password" class="form-control" formControlName="password">
+                <label for="password">Mot de passe (6 caratères minumum)*</label>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">Créer mon compte</button>
+        </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+    </div>
+</div>
